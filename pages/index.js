@@ -51,13 +51,14 @@ const Home = ({ post }) => {
               'align-items-stretch': true
             })}>
               <Card className="mb-3">
-                <Link as={`/${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} href={`/story?id=${newsfeed.newsid}`}>
-                  <div className={classnames({
+                
+              <Link as={`/${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} href={`/story?id=${newsfeed.newsid}`}>
+                              <div className={classnames({
                     'cursor-pointer': true
                   })}>
                     <Card.Img className="cursor-pointer" top width="100%" src={newsfeed.approved_image} alt={newsfeed.name} />
                   </div>
-                </Link>
+                            </Link>
                 <Card.Body>
                   <Link as={`/${catArray[parseInt(newsfeed.category)]}`} href={`/category?id=${newsfeed.category}`}>
                     <a className="post-catagory">{catArray2[newsfeed.category]}</a>
