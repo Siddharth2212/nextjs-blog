@@ -1,0 +1,27 @@
+{
+  "name": "Newsapp.io",
+  "homepage": "https://www.newsapp.io/",
+  "dependencies": {
+    "@hapi/iron": "6.0.0",
+    "bootstrap": "^4.5.0",
+    "cookie": "0.4.0",
+    "next": "latest",
+    "next-connect": "0.6.1",
+    "passport": "0.4.1",
+    "passport-local": "1.0.0",
+    "react": "latest",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "latest",
+    "swr": "0.1.16"
+  },
+  "license": "ISC",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "node index.js",
+    "postinstall": "next build"
+  },
+  "engines": {
+    "node": "12.16.3"
+  }
+}
