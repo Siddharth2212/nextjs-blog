@@ -28,6 +28,7 @@ const Home = ({ post }) => {
                     className="d-block w-100"
                     src={newsfeed.approved_image}
                     alt="First slide"
+                    style={{height: "fit-content"}}
                   />
                   <Carousel.Caption>
                     <h3>{newsfeed.approved_title}</h3>

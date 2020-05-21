@@ -38,7 +38,6 @@ const Header = () => {
                     <li><Link href="/privacypolicy">Privacy Policy </Link></li>
                     <li><Link href="/termsofservice">Terms of Service </Link></li>
                     <li><Link href="/aboutus">About Us </Link></li>
-                    <li><Link href="/contactus">Contact Us </Link></li>
                   </ul>
                 </div>
               </div>
