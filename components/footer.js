@@ -1,51 +1,51 @@
 import Link from 'next/link'
 import { useUser } from '../lib/hooks'
 import Package from '../package'
-import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 const Header = () => {
   const user = useUser()
 
   return (
     <footer className="footer pb-0">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-3">
-                        <div className="logo">
-                            <h3>NewsApp.io</h3>
-                        </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <div className="logo">
+              <h3>NewsApp.io</h3>
+            </div>
 
-                        <strong>About NewsApp.io</strong>
-                        <div className="logo">
-                            <a target="_blank" href={`https://www.facebook.com/newsappio`} className="btn-social-icon">
-                                <i style={{color:'#3b5998', fontSize:'2.25rem'}} className="icon icon ion-logo-facebook"></i>
-                            </a>
-                            <a target="_blank" href={`https://twitter.com/newsappdotio`} className="btn-social-icon">
-                                <i style={{color:'#38A1F3', fontSize:'2.25rem'}} className="icon icon ion-logo-twitter"></i>
-                            </a>
-                            <a target="_blank" href={`mailto:info@ampdigitalnet.com`} className="btn-social-icon">
-                                <i style={{color:'blue', fontSize:'2.25rem'}} className="icon icon ion-md-mail"></i>
-                            </a>
-                        </div>
-                        <p>NewsApp.io is a Global Media and Information Platform providing Latest News and Job Opportunities from all the fields related to Technology and Digital Marketing.</p>
-                    </div>
-                    <div className="col-lg-9">
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <h4 className="text-thin">Navigation</h4>
-                                <div className="d-flex flex-wrap">
-                                    <ul className="navigation list-unstyled">
-                                        <li><Link href="/">Home </Link></li>
-                                        <li><Link href="/privacypolicy">Privacy Policy </Link></li>
-                                        <li><Link href="/termsofservice">Terms of Service </Link></li>
-                                        <li><Link href="/aboutus">About Us </Link></li>
-                                        <li><Link href="/contactus">Contact Us </Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 newsletter">
-                                <h4 className="text-thin">Newsletter</h4>
-                                <p>Subscribe to the Weekly Newsletter to Stay Updated With Weekly Top Stories</p>
-                                {/* <div>
+            <strong>About NewsApp.io</strong>
+            <div className="logo">
+              <a target="_blank" href={`https://www.facebook.com/newsappio`} className="btn-social-icon">
+                <i style={{ color: '#3b5998', fontSize: '2.25rem' }} className="icon icon ion-logo-facebook"></i>
+              </a>
+              <a target="_blank" href={`https://twitter.com/newsappdotio`} className="btn-social-icon">
+                <i style={{ color: '#38A1F3', fontSize: '2.25rem' }} className="icon icon ion-logo-twitter"></i>
+              </a>
+              <a target="_blank" href={`mailto:info@ampdigitalnet.com`} className="btn-social-icon">
+                <i style={{ color: 'blue', fontSize: '2.25rem' }} className="icon icon ion-md-mail"></i>
+              </a>
+            </div>
+            <p>NewsApp.io is a Global Media and Information Platform providing Latest News and Job Opportunities from all the fields related to Technology and Digital Marketing.</p>
+          </div>
+          <div className="col-lg-9">
+            <div className="row">
+              <div className="col-lg-4">
+                <h4 className="text-thin">Navigation</h4>
+                <div className="d-flex flex-wrap">
+                  <ul className="navigation list-unstyled">
+                    <li><Link href="/">Home </Link></li>
+                    <li><Link href="/privacypolicy">Privacy Policy </Link></li>
+                    <li><Link href="/termsofservice">Terms of Service </Link></li>
+                    <li><Link href="/aboutus">About Us </Link></li>
+                    <li><Link href="/contactus">Contact Us </Link></li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-4 newsletter">
+                <h4 className="text-thin">Newsletter</h4>
+                <p>Subscribe to the Weekly Newsletter to Stay Updated With Weekly Top Stories</p>
+                {/* <div>
                                     <Form>
                                         <FormGroup>
                                             <Input type="email" name="email" id="exampleEmail" placeholder="Your email address" />
@@ -53,30 +53,30 @@ const Header = () => {
                                         <Button>Submit</Button>
                                     </Form>
                                 </div> */}
-                            </div>
-                            <div className="col-lg-4 newsletter">
-                                <h4 className="text-thin">Location</h4>
-                                <p>AMP Digital, Unit Number 221, JMD Megapolis, Sector 48, Sohna Road, Gurugram, Haryana 122018 </p>
+              </div>
+              <div className="col-lg-4 newsletter">
+                <h4 className="text-thin">Location</h4>
+                <p>AMP Digital, Unit Number 221, JMD Megapolis, Sector 48, Sohna Road, Gurugram, Haryana 122018 </p>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div className="copyrights">
-                <div className="container text-center">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <p className="text-muted small">
-                                <span>newsapp.io built with Mongo, Express, React 16.6.3, Node</span>
-                                <span>is brought to you by <a className="color-white" href="http://www.ampdigitalnet.com">AMP Digital</a>. AMP Digital is into digital marketing services and training.</span>
-                                <span className="ml-2">© 2020 AMP Digital .</span></p>
-                            {/*<p>NewsApp.io is brought to you by <a className="color-white" href="http://www.ampdigitalnet.com">AMP Digital</a>. AMP Digital is into digital marketing services and training.</p>*/}
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+      <div className="copyrights">
+        <div className="container text-center">
+          <div className="row">
+            <div className="col-md-12">
+              <p className="text-muted small">
+                <span>newsapp.io built with Mongo, Express, React 16.6.3, Node</span>
+                <span>is brought to you by <a className="color-white" href="http://www.ampdigitalnet.com">AMP Digital</a>. AMP Digital is into digital marketing services and training.</span>
+                <span className="ml-2">© 2020 AMP Digital .</span></p>
+              {/*<p>NewsApp.io is brought to you by <a className="color-white" href="http://www.ampdigitalnet.com">AMP Digital</a>. AMP Digital is into digital marketing services and training.</p>*/}
             </div>
-   
+          </div>
+        </div>
+      </div>
+
 
       <style jsx>{`
       .footer {
@@ -164,7 +164,7 @@ footer a:hover {
   color: #fff
 }
       `}</style>
-        </footer>
+    </footer>
   )
 }
 

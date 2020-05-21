@@ -30,15 +30,15 @@ const Home = ({ post }) => {
                     alt="First slide"
                   />
                   <Carousel.Caption>
-              <h3>{newsfeed.approved_title}</h3>
-              <p>{newsfeed.approved_description}</p>
+                    <h3>{newsfeed.approved_title}</h3>
+                    <p>{newsfeed.approved_description}</p>
                   </Carousel.Caption>
                 </Carousel.Item>
               ))}
             </Carousel>
           </Col>
           <Col md={4}>
-          <Trending recentdocs={post.feeds} trendingdocs={post.feeds}/>          
+            <Trending recentdocs={post.feeds} trendingdocs={post.feeds} />
           </Col>
         </Row>
         <Row>
@@ -101,7 +101,6 @@ export async function getServerSideProps({ query }) {
     `https://www.newsapp.io/feed/data?page=1`
   )
     .then(result => {
-      console.log(result);
       return result.json()
     })
     .then(post => ({ props: { post } }));
