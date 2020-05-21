@@ -36,18 +36,17 @@ function Profile() {
   return <Container className={`pt-1 ${styles.container}`}>
     <Row>
       {data.trending.slice(0, 5).map((newsfeed) => (
-        <Media>
+        <Media className="row align-items-center ml-0">
           <img
-            width={64}
-            height={64}
+            width={65}
+            height={65}
             className="mr-3"
             src={newsfeed.approved_image}
             alt="Generic placeholder"
           />
           <Media.Body>
-            <p style={{ fontSize: "0.8rem" }} className="mb-0">{newsfeed.approved_title}</p>
+            <p style={{ fontSize: "0.8rem", lineHeight: 1.2 }} className="mb-0 pr-3">{newsfeed.approved_title}</p>
             <div><span style={{ color: 'grey', fontSize: '0.8rem' }} className="time">{TIMESINCE(newsfeed.date)} ago</span></div>
-            <hr className="m-0" />
           </Media.Body>
         </Media>
       ))}
@@ -63,18 +62,17 @@ function Profile2() {
   return <Container className={`pt-1 ${styles.container}`}>
     <Row>
       {data.feeds.slice(0, 5).map((newsfeed) => (
-        <Media>
+        <Media className="row align-items-center ml-0">
           <img
-            width={64}
-            height={64}
+            width={65}
+            height={65}
             className="mr-3"
             src={newsfeed.approved_image}
             alt="Generic placeholder"
           />
           <Media.Body>
-            <p style={{ fontSize: "0.8rem" }} className="mb-0">{newsfeed.approved_title}</p>
+            <p style={{ fontSize: "0.8rem", lineHeight: 1.2 }} className="mb-0 pr-3">{newsfeed.approved_title}</p>
             <div><span style={{ color: 'grey', fontSize: '0.8rem' }} className="time">{TIMESINCE(newsfeed.date)} ago</span></div>
-            <hr className="m-0" />
           </Media.Body>
         </Media>
       ))}
