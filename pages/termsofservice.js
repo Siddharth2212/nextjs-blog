@@ -1,24 +1,16 @@
-import React from 'react'
-import Page from '../components/page'
+import Head from 'next/head'
 import Layout from '../components/layout'
+import { Container, Row, Card, Button } from 'react-bootstrap'
 
-export default class extends Page {
+export default function Home() {
+  return (
+    <Layout metatitle="hello" title="Tech News & Digital Marketing Jobs | NewsApp" navmenu={false} profileimage={'aiheog'}>
 
-   
-
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
-        return(
-            <Layout {...this.props} navmenu={false}>
-               <h1 className="text-uppercase" style={{color:'#2f3b5f'}}>Privacy Policy</h1>
-                        <hr />
-                        <br /><br />
-                        <h1 className="text-uppercase"> Terms of Service for AmpDigital Net</h1>
-                        <hr />
-                        If you require any more information or have any questions about our Terms of Service, please feel free to contact us by email at <a name="contactlink"></a> <a href="mailto:">info@ampdigitalnet.com</a>.
+      <Container>
+        <h1>
+          Newsapp.io Terms of Service
+        </h1>
+        If you require any more information or have any questions about our Terms of Service, please feel free to contact us by email at <a name="contactlink"></a> <a href="mailto:">info@ampdigitalnet.com</a>.
 
                         <h3>Introduction</h3>
                         <p>These terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full and without reservation. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use this website.</p>
@@ -158,7 +150,11 @@ export default class extends Page {
                         <p>These terms and conditions will be governed by and construed in accordance with the laws of , and any disputes relating to these terms and conditions will be subject to the exclusive jurisdiction of the courts of .</p>
 
                         <br /><br />
-            </Layout>
-        )
-    }
+        <Container>
+          <Row className="justify-content-md-between">
+          </Row>  
+        </Container>
+      </Container>
+      </Layout>
+  )
 }

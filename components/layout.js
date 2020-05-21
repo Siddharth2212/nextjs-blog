@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from './header'
+import Footer from './footer'
 import Package from '../package'
 
 const Layout = (props) => (
@@ -48,12 +49,12 @@ const Layout = (props) => (
                     ]
                 }`}} />    
                 </Head>
-
-    <Header />
+                <Header/>
 
     <main>
       <div className="container">{props.children}</div>
     </main>
+    <Footer/>
 
     <style jsx global>{`
       *,
@@ -61,7 +62,17 @@ const Layout = (props) => (
       *::after {
         box-sizing: border-box;
       }
+      .bg-dark {
+        background-color: #2196f3!important
+    }
+    .navbar-light .navbar-brand {
+      color: white;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: white;
+}
       body {
+        background: #f0f2f5!important;
         margin: 0;
         color: #333;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -69,7 +80,6 @@ const Layout = (props) => (
           'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
       }
       .container {
-        max-width: 42rem;
         margin: 0 auto;
         padding: 2rem 1.25rem;
       }
