@@ -51,16 +51,25 @@ const [size, setSize] = useState(18);
               <Carousel>
                 {feeds.slice(0, 3).map((newsfeed) => (
   
-                  <Carousel.Item>
+                  <Carousel.Item style={{postition: "relative"}}>
                     <img
                       className="d-block w-100"
                       src={newsfeed.approved_image}
                       alt="First slide"
                       style={{height: "fit-content"}}
                     />
+                    <div class="black-overlay" style={{position: "absolute",
+                  top: 0,
+                  left: 0,
+                  height: "100%",
+                  width: "100%",
+                  background: "rgba(0,0,0,0.6)"}}></div>
                     <Carousel.Caption>
                       <h3>{newsfeed.approved_title}</h3>
                       <p>{newsfeed.approved_description}</p>
+                      <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
+                      <Button color="primary"><i style={{ color: 'white' }} className="cursor-pointer">Read More</i></Button>
+                    </Link>
                     </Carousel.Caption>
                   </Carousel.Item>
                 ))}
