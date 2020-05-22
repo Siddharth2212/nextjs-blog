@@ -36,7 +36,7 @@ function Profile() {
   return <Container className={`pt-1 ${styles.container}`}>
     <Row>
       {data.trending.slice(0, 5).map((newsfeed) => (
-        <Media className="row align-items-center ml-0">
+        <Media key={newsfeed.newsid} className="row align-items-center ml-0">
           <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
           <img
             width={65}
@@ -67,7 +67,7 @@ function Profile2() {
   return <Container className={`pt-1 ${styles.container}`}>
     <Row>
       {data.feeds.slice(0, 5).map((newsfeed) => (
-        <Media className="row align-items-center ml-0">
+        <Media key={newsfeed.newsid} className="row align-items-center ml-0">
                     <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
           <img
             width={65}

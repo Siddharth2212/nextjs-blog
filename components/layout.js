@@ -9,7 +9,7 @@ const Layout = (props) => (
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{props.title || 'Tech News & Digital Marketing jobs | NewsApp'}</title>
-      <link rel="icon" type="image/x-icon" href="/static/faviconpic.png" />
+      <link rel="icon" type="image/x-icon" href="/faviconpic.png" />
       <meta name="description" content={props.metatitle || 'NewsApp provides the latest News & Job Opportunities in Digital Marketing field globally. News App also covers the areas of  Analytics, Technology & Gadgets.'} />
       <meta name="keywords" content={'Digital Marketing News,Digital Marketing Jobs,SEO News,SEM News,Social Media Marketing,Search Engine Optimisation,Content Marketing,news app, news'} />
       <meta property="fb:pages" content="335728363532837" />
