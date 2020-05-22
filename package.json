@@ -1,6 +1,6 @@
 {
   "name": "Newsapp.io",
-  "homepage": "https://www.newsapp.io/",
+  "homepage": "https://nextfast.herokuapp.com/",
   "dependencies": {
     "@hapi/iron": "6.0.0",
     "bootstrap": "^4.5.0",

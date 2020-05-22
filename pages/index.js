@@ -147,7 +147,7 @@ const [size, setSize] = useState(18);
 export async function getServerSideProps({ query }) {
   console.log("HELLO");
   return fetch(
-    `https://www.newsapp.io/feed/data?page=1`
+    `https://nextfast.herokuapp.com/feed/data?page=1`
   )
     .then(result => {
       return result.json()

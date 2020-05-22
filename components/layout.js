@@ -27,7 +27,7 @@ const Layout = (props) => (
                     "aggregateRating": { "@type": "AggregateRating", "ratingValue": ${Math.round(((Math.random() * 0.99) + 4) * 100) / 100}, "bestRating": "5", "reviewCount": ${Math.floor(Math.random() * 250) + 1} },
                     "alternateName": "NewsApp",
                     "url": ${Package.homepage},
-                    "logo": "https://www.newsapp.io/logoimg.webp",
+                    "logo": "https://nextfast.herokuapp.com/logoimg.webp",
                     "image": ${'https://ampdigital.s3-us-west-2.amazonaws.com/findmyfone_google.jpg'},
                     "contactPoint": {
                     "@type": "ContactPoint",
@@ -38,7 +38,7 @@ const Layout = (props) => (
                 },
                     "potentialAction": {
                     "@type": "SearchAction",
-                    "target": "https://www.newsapp.io/search?q={search_term_string}",
+                    "target": "https://nextfast.herokuapp.com/search?q={search_term_string}",
                     "query-input": "required name=search_term_string"
                 }
                     "sameAs": [
@@ -46,7 +46,7 @@ const Layout = (props) => (
                     "https://www.twitter.com/newsappdotio",
                     "",
                     "",
-                    "https://www.newsapp.io"
+                    "https://nextfast.herokuapp.com"
                     ]
                 }`}} />
     </Head>

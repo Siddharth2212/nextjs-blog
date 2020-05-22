@@ -103,7 +103,7 @@ export async function getServerSideProps({ query }) {
   console.log("HELLOhaipeghapieghapi");
   console.log(query)
   return fetch(
-    `https://www.newsapp.io/feed/data?newsid=${query.comment}`
+    `https://nextfast.herokuapp.com/feed/data?newsid=${query.comment}`
   )
     .then(result => {
       return result.json()

@@ -113,7 +113,7 @@ export async function getServerSideProps({ query }) {
   const catArray = ['home', 'search-engine-optimization', 'search-engine-marketing', 'analytics', 'content-marketing', 'mobile', 'social-media-marketing', 'google-adwords', 'facebook', 'india-jobs', 'international-jobs', 'freelancing-jobs', 'artificial-intelligence', 'entrepreneurship', 'digital-marketing-tips', 'post', 'snapchat', 'instagram', 'twitter', 'whatsapp', 'youtube', 'cyber-security', 'technology-tips']
   let catId = catArray.indexOf(query.id)
   return fetch(
-    `https://www.newsapp.io/feed/data?category=${catId}`
+    `https://nextfast.herokuapp.com/feed/data?category=${catId}`
   )
     .then(result => {
       return result.json()
