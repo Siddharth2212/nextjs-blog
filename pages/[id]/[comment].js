@@ -5,7 +5,11 @@ import { Container, Row, Col, Card, Button, Breadcrumb } from 'react-bootstrap'
 import Trending from "../../components/TrendingComponent";
 import Recommended from "../../components/RecommendedComponent";
 import classnames from 'classnames';
-import { TIMESINCE } from "../../utils/timesince";
+import { TIMESINCE} from "../../utils/timesince";
+import {  EXTRACTHOSTNAME } from "../../utils/extracthostname";
+import {  GETHOSTNAME } from "../../utils/gethostname";
+
+import Share from "../../components/Share";
 
 const Post = ({ post, category }) => {
   const router = useRouter()
@@ -14,6 +18,7 @@ const Post = ({ post, category }) => {
   let catArray2 = ['Home', 'Search engine optimization', 'Search engine marketing', 'Analytics', 'Content marketing', 'Mobile', 'Social-media-marketing', 'Google-adwords', 'Facebook', 'India jobs', 'International-jobs', 'Freelancing jobs', 'Artificial Intelligence', 'Entrepreneurship', 'Digital marketing tips', 'Post', 'Snapchat', 'Instagram', 'Twitter', 'Whatsapp', 'Youtube', 'Cyber security', 'Technology tips']
   var catId = catArray.indexOf(category);
   var catName = catArray2[catId];
+  
   return (
     <Layout metatitle="hello" title="Tech News & Digital Marketing Jobs | NewsApp" navmenu={false} profileimage={'aiheog'}>
       <Container>
@@ -41,12 +46,15 @@ const Post = ({ post, category }) => {
             {
               post.feeds.map((newsfeed) => {
                 return (
-                  <Card className="mb-4" style={{ border: "none" }}>
+                  <Card key={`post_${newsfeed.newsid}`} className="mb-4" style={{ border: "none" }}>
                     <Card.Img variant="top" src={newsfeed.approved_image} />
                     <Card.Body style={{ background: "#f0f2f5" }}>
+                    <Share newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
                       <Card.Text>
                         <div className="mb-3" dangerouslySetInnerHTML={{ __html: newsfeed.longapproved_description }}></div>
-                        <a className="mt-2" href="{this.props.data.link}"> Read more at </a>
+                        <a className="mt-2" href="{this.props.data.link}"> Read more at {
+                          <a target="_blank" href={newsfeed.link}>{((typeof newsfeed.added!='undefined' && newsfeed.added == 'true') ? EXTRACTHOSTNAME(newsfeed.link) : GETHOSTNAME(newsfeed.link.split('url=')[1], newsfeed))}</a>
+                        } </a>
                       </Card.Text>
                     </Card.Body>
                   </Card>

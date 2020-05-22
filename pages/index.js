@@ -9,6 +9,7 @@ import { EXTRACTHOSTNAME } from "../utils/extracthostname";
 import { GETHOSTNAME } from "../utils/gethostname";
 import { TIMESINCE } from "../utils/timesince";
 import Trending from "../components/TrendingComponent";
+import Share from "../components/Share";
 import {useState} from "react"
 import Loader from "../components/loader";
 
@@ -46,30 +47,28 @@ const [size, setSize] = useState(18);
     return (
       <Layout metatitle="hello" title="Tech News & Digital Marketing Jobs | NewsApp" navmenu={false} profileimage={'aiheog'}>
         <Container>
+          <Row className="d-none d-md-block">
           <Row>
             <Col md={8}>
               <Carousel>
                 {feeds.slice(0, 3).map((newsfeed) => (
   
-                  <Carousel.Item style={{postition: "relative"}}>
+                  <Carousel.Item key={`carousel_${newsfeed.newsid}`} style={{postition: "relative"}}>
                     <img
                       className="d-block w-100"
                       src={newsfeed.approved_image}
                       alt="First slide"
                       style={{height: "fit-content"}}
                     />
-                    <div class="black-overlay" style={{position: "absolute",
-                  top: 0,
-                  left: 0,
+                    <div style={{position: "absolute",
+                  top: "0px",
+                  left: "0px",
                   height: "100%",
                   width: "100%",
                   background: "rgba(0,0,0,0.6)"}}></div>
                     <Carousel.Caption>
                       <h3>{newsfeed.approved_title}</h3>
                       <p>{newsfeed.approved_description}</p>
-                      <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
-                      <Button color="primary"><i style={{ color: 'white' }} className="cursor-pointer">Read More</i></Button>
-                    </Link>
                     </Carousel.Caption>
                   </Carousel.Item>
                 ))}
@@ -79,9 +78,10 @@ const [size, setSize] = useState(18);
               <Trending recentdocs={post.feeds} trendingdocs={post.feeds} />
             </Col>
           </Row>
+          </Row>
           <Row>
             {feeds.map((newsfeed) => (
-              <Col md={4} className={classnames({
+              <Col key={`newsfeed_${newsfeed.newsid}`} md={4} className={classnames({
                 'pt-2': true,
                 'pb-2': true,
                 'd-flex': true,
@@ -99,6 +99,7 @@ const [size, setSize] = useState(18);
                     <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
                     <Card.Title className="cursor-pointer">{newsfeed.approved_title}</Card.Title>
                     </Link>
+                    <Share newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
                     <div style={{fontSize: "0.8rem"}} className="pt-1">
                       <i>{TIMESINCE(newsfeed.date)} ago | {<a style={{color: "#828282"}} target="_blank" href={newsfeed.link}>{((typeof newsfeed.added != 'undefined' && newsfeed.added == 'true') ? EXTRACTHOSTNAME(newsfeed.link) : GETHOSTNAME(newsfeed.link.split('url=')[1], newsfeed))}</a>}</i>
                     </div>

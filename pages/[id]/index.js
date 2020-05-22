@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout from '../../components/layout'
 import { Container, Row, Col, Card, Button, Breadcrumb } from 'react-bootstrap'
 import Trending from "../../components/TrendingComponent";
+import Share from "../../components/Share";
 import classnames from 'classnames';
 import React, { useState, useEffect } from "react";
 import Page from '../../components/page'
@@ -71,6 +72,8 @@ export default class Category extends Page {
                           <Link href="/[id]/[comment]" as={`/${catArray[this.state.catId]}/${newsfeed.newsid}`}>
                             <Card.Title style={{ cursor: "pointer", fontWeight: "bolder" }}>{newsfeed.approved_title}</Card.Title>
                           </Link>
+                          <Share newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
+
                           <Card.Text>
                             {newsfeed.approved_description}
                           </Card.Text>
