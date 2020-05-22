@@ -37,15 +37,20 @@ function Profile() {
     <Row>
       {data.trending.slice(0, 5).map((newsfeed) => (
         <Media className="row align-items-center ml-0">
+          <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
           <img
             width={65}
             height={65}
+            style={{cursor: "pointer"}}
             className="mr-3"
             src={newsfeed.approved_image}
             alt="Generic placeholder"
           />
+          </Link>
           <Media.Body>
-            <p style={{ fontSize: "0.8rem", lineHeight: 1.2 }} className="mb-0 pr-3">{newsfeed.approved_title}</p>
+          <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
+            <p style={{ fontSize: "0.8rem", lineHeight: 1.2, cursor: "pointer" }} className="mb-0 pr-3">{newsfeed.approved_title}</p>
+            </Link>
             <div><span style={{ color: 'grey', fontSize: '0.8rem' }} className="time">{TIMESINCE(newsfeed.date)} ago</span></div>
           </Media.Body>
         </Media>
@@ -63,15 +68,20 @@ function Profile2() {
     <Row>
       {data.feeds.slice(0, 5).map((newsfeed) => (
         <Media className="row align-items-center ml-0">
+                    <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
           <img
             width={65}
             height={65}
+            style={{cursor: "pointer"}}
             className="mr-3"
             src={newsfeed.approved_image}
             alt="Generic placeholder"
           />
+          </Link>
           <Media.Body>
-            <p style={{ fontSize: "0.8rem", lineHeight: 1.2 }} className="mb-0 pr-3">{newsfeed.approved_title}</p>
+          <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
+            <p style={{ fontSize: "0.8rem", lineHeight: 1.2, cursor: "pointer" }} className="mb-0 pr-3">{newsfeed.approved_title}</p>
+            </Link>
             <div><span style={{ color: 'grey', fontSize: '0.8rem' }} className="time">{TIMESINCE(newsfeed.date)} ago</span></div>
           </Media.Body>
         </Media>

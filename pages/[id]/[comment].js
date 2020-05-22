@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout from '../../components/layout'
 import { Container, Row, Col, Card, Button, Breadcrumb } from 'react-bootstrap'
 import Trending from "../../components/TrendingComponent";
+import Recommended from "../../components/RecommendedComponent";
 import classnames from 'classnames';
 import { TIMESINCE } from "../../utils/timesince";
 
@@ -19,7 +20,11 @@ const Post = ({ post, category }) => {
         <Row className="mt-1 d-none d-md-block">
           <Breadcrumb>
             <Breadcrumb.Item><Link href="/"><a>Home</a></Link></Breadcrumb.Item>
-            <Breadcrumb.Item><Link as={`/`} href={`/category?id=1`}>{catName}</Link></Breadcrumb.Item>
+            <Breadcrumb.Item>
+            <Link href="/[id]" as={`/${category}`}>
+                    {catName}
+                  </Link>
+            </Breadcrumb.Item>
             <Breadcrumb.Item active>{post.feeds[0].approved_title}</Breadcrumb.Item>
           </Breadcrumb>
         </Row>
@@ -53,66 +58,10 @@ const Post = ({ post, category }) => {
             <Trending recentdocs={post.feeds} trendingdocs={post.feeds} />
           </Col>
         </Row>
-        <Row className="w-100">
-          <Col md={8}>
-            <div id="pagination">
-              <div className="next col-6">
-                <Link as={`/`} href={`/`}>
-                  <a className="d-md-none">
-                    <span>Next</span>
-                                    »
-                                </a>
-                </Link>
-                <Link as={`/`} href={`/`}>
-                  <a className="d-none d-md-block">
-                    <span>Next</span>
-                    {`this.state.nextdoc[0].approved_title`} »
-                                </a>
-                </Link>
-              </div>
-
-
-              <div className="prev col-6">
-                <Link as={`/`} href={`/`}>
-                  <a className="d-md-none">
-                    <span>Previous</span> «
-                                </a>
-                </Link>
-                <Link as={`/`} href={`/`}>
-                  <a className="d-none d-md-block">
-                    <span>Previous</span> « {`this.state.prevdoc[0].approved_title`}
-                  </a>
-                </Link>
-              </div>
-
-              <div className="clearfix"></div>
-            </div>
-          </Col>
-        </Row>
         <Row className={classnames({
           'justify-content-center': true
         })}>
-          <h4 className="mt-2">Recommended For You</h4>
-          <Row className="mx-2">
-            {
-              [post.feeds[0], post.feeds[0], post.feeds[0], post.feeds[0]].map((newsfeed) => {
-                return (
-                  <Col md={3}>
-                    <Card className="mb-4">
-                      <Card.Img variant="top" src={newsfeed.approved_image} />
-                      <Card.Body style={{ background: "#f0f2f5" }}>
-                        <Card.Title>{newsfeed.approved_title}</Card.Title>
-
-                        <Card.Text>
-                          <p className="card-text"><small className="text-time"><em> {TIMESINCE(newsfeed.date)} ago</em></small></p>
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                );
-              })
-            }
-          </Row>
+            <Recommended category={post.feeds[0].category} date={post.feeds[0].date} newsid={post.feeds[0].newsid} />
 
         </Row>
       </Container>
@@ -137,65 +86,6 @@ const Post = ({ post, category }) => {
         margin: -4px 0 -6px;
         font-weight: 900;
     }}
-
-
-#pagination,
-.next,
-.prev {
-  margin-top: 10px
-}
-
-.fa-stack,
-.fa-stack-1x {
-  cursor: pointer
-}
-
-#pagination {
-  width: 100%;
-  border-top: 1px dotted #ccc;
-  padding: 20px 5px 0;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400
-}
-
-.next {
-  float: right;
-  text-align: right
-}
-
-.prev {
-  float: left
-}
-
-.next span,
-.prev span {
-  font-size: 12px;
-  position: absolute;
-  top: -26px
-}
-
-.clearfix {
-  clear: both
-}
-
-.next span {
-  color: #666;
-  font-weight: 400;
-  right: 0
-}
-
-.next a,
-.prev a {
-  color: #333
-}
-
-.prev span {
-  color: #666
-}
-
-      
-      
       `}</style>
     </Layout>
   )

@@ -1,0 +1,84 @@
+.container {
+  background: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerImage {
+  width: 6rem;
+  height: 6rem;
+}
+
+.headerHomeImage {
+  width: 8rem;
+  height: 8rem;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
+#pagination,
+.next,
+.prev {
+  margin-top: 10px
+}
+
+.fa-stack,
+.fa-stack-1x {
+  cursor: pointer
+}
+
+#pagination {
+  width: 100%;
+  border-top: 1px dotted #ccc;
+  padding: 20px 5px 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400
+}
+
+.next {
+  float: right;
+  text-align: right
+}
+
+.prev {
+  float: left
+}
+
+.next span,
+.prev span {
+  font-size: 12px;
+  position: absolute;
+  top: -26px
+}
+
+.clearfix {
+  clear: both
+}
+
+.next span {
+  color: #555;
+  font-weight: 400;
+  right: 0
+}
+
+.next a,
+.prev a {
+  color: #333
+}
+
+.prev span {
+  color: #555
+}
+
+.prevnextspan{
+  color: #555
+}
+.prevnextlink{
+  text-decoration: none!important;
+}

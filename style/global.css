@@ -1,0 +1,23 @@
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.card-title{
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.card-title:hover{
+  text-decoration: underline;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}

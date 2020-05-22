@@ -52,23 +52,21 @@ const Home = ({ post }) => {
             })}>
               <Card className="mb-3">
                 
-              <Link as={`/${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} href={`/story?id=${newsfeed.newsid}`}>
-                              <div className={classnames({
-                    'cursor-pointer': true
-                  })}>
-                    <Card.Img className="cursor-pointer" top width="100%" src={newsfeed.approved_image} alt={newsfeed.name} />
-                  </div>
+              <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
+                     <Card.Img className="cursor-pointer" top width="100%" src={newsfeed.approved_image} alt={newsfeed.name} />
                             </Link>
                 <Card.Body>
-                  <Link as={`/${catArray[parseInt(newsfeed.category)]}`} href={`/category?id=${newsfeed.category}`}>
+                <Link href="/[id]" as={`/${catArray[newsfeed.category]}`}>
                     <a className="post-catagory">{catArray2[newsfeed.category]}</a>
                   </Link>
-                  <Card.Title>{newsfeed.approved_title}</Card.Title>
-                  <div className="pt-1">
-                    <i>{TIMESINCE(newsfeed.date)} ago | {<a target="_blank" href={newsfeed.link}>{((typeof newsfeed.added != 'undefined' && newsfeed.added == 'true') ? EXTRACTHOSTNAME(newsfeed.link) : GETHOSTNAME(newsfeed.link.split('url=')[1], newsfeed))}</a>}</i>
+                  <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
+                  <Card.Title className="cursor-pointer">{newsfeed.approved_title}</Card.Title>
+                  </Link>
+                  <div style={{fontSize: "0.8rem"}} className="pt-1">
+                    <i>{TIMESINCE(newsfeed.date)} ago | {<a style={{color: "#828282"}} target="_blank" href={newsfeed.link}>{((typeof newsfeed.added != 'undefined' && newsfeed.added == 'true') ? EXTRACTHOSTNAME(newsfeed.link) : GETHOSTNAME(newsfeed.link.split('url=')[1], newsfeed))}</a>}</i>
                   </div>
                   <Card.Text>{newsfeed.approved_description}</Card.Text>
-                  <Link as={`/${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} href={`/story?id=${newsfeed.newsid}`}>
+                  <Link href="/[id]/[comment]" as={`/${catArray[newsfeed.category]}/${newsfeed.newsid}`}>
                     <Button color="primary"><i style={{ color: 'white' }} className="cursor-pointer">Read More</i></Button>
                   </Link>
                 </Card.Body>
