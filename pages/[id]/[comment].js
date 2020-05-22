@@ -62,7 +62,7 @@ const Post = ({ post, category }) => {
               })
             }
           </Col>
-          <Col md={4}>
+          <Col className="d-none d-md-block" md={4}>
             <Trending recentdocs={post.feeds} trendingdocs={post.feeds} />
           </Col>
         </Row>

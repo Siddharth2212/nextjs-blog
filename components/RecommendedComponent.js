@@ -29,7 +29,7 @@ function Profile({newsid, category, date}) {
   if (!data) return <Loader />
   let next;
   if(data.prevfeeds && data.prevfeeds.length==1){
-    next =  <Col md={6}>
+    next =  <Col xs={6} className="row justify-content-end">
       <Link href="/[id]/[comment]" as={`/${catArray[data.prevfeeds[0].category]}/${data.prevfeeds[0].newsid}`}>
       <a className={`d-md-none ${styles.prevnextlink}`}>
             <span className={styles.prevnextspan}>Next</span>
@@ -49,7 +49,7 @@ function Profile({newsid, category, date}) {
   }
   let prev;
   if(data.nextfeeds && data.nextfeeds.length==1){
-    prev =   <Col md={6}>
+    prev =   <Col xs={6}>
     <Link href="/[id]/[comment]" as={`/${catArray[data.nextfeeds[0].category]}/${data.nextfeeds[0].newsid}`}>
         <a className={`d-md-none ${styles.prevnextlink}`}>
           <span className={styles.prevnextspan}>Previous</span> «

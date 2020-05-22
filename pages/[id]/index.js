@@ -74,7 +74,7 @@ export default class Category extends Page {
                           </Link>
                           <Share newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
 
-                          <Card.Text>
+                          <Card.Text className="mt-2">
                             {newsfeed.approved_description}
                           </Card.Text>
                           <Link href="/[id]/[comment]" as={`/${catArray[this.state.catId]}/${newsfeed.newsid}`}>
@@ -86,7 +86,7 @@ export default class Category extends Page {
                   })
                 }
               </Col>
-              <Col md={4}>
+              <Col className="d-none d-md-block" md={4}>
                 <Trending />
               </Col>
             </Row>
