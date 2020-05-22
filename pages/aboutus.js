@@ -53,11 +53,8 @@ export default function Home() {
                 </div>
             </Row>
             <Row>
-                <Col>
-                    <h2>About the Founder</h2>
-                </Col>
-                <Col md="8" lg="7" className="text-content">
-                    <p className="lead">Amitabh Verma</p>
+                <Col md={8} className="text-content">
+                    <p style={{fontWeight: "bolder", fontSize: "larger"}}>Amitabh Verma</p>
                     <p className="">
                         Amitabh Verma is a business leader with extensive experience in Digital Marketing, Sales, Operations and Customer Service and has worked for global MNCs as well as startups. Amitabh is currently the CEO and Founder of AMP Digital.
                             <br /><br />
@@ -74,9 +71,9 @@ export default function Home() {
                         </ul>
                     </div>
                 </Col>
-                <div className="col-md-4 col-lg-5">
-                    <p><img src="/amitabh.jpeg" alt="..." className="img-fluid rounded-circle" /></p>
-                </div>
+                <Col md={4}>
+                <p><img src="/amitabh.jpeg" alt="..." className="img-fluid rounded-circle" /></p>
+                </Col>
             </Row>
         </Layout>
     )
