@@ -1,11 +1,10 @@
-import { useRouter, Router } from 'next/router'
 import Link from 'next/link'
 import Layout from '../../components/layout'
 import { Container, Row, Col, Card, Button, Breadcrumb } from 'react-bootstrap'
 import Trending from "../../components/TrendingComponent";
 import Share from "../../components/Share";
 import classnames from 'classnames';
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Page from '../../components/page'
 import Loader from '../../components/loader';
 
