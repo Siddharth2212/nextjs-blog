@@ -31,7 +31,7 @@ const [loading, setLoading] = useState(false);
  async function showMore() {
    setLoading(true);
   return fetch(
-    `api/searchfeeds?size=${size}&searchString=${searchquery}`
+    `https://nextfast.herokuapp.com/searchfeed?size=${size}&searchString=${searchquery}`
   )
     .then(result => {
       return result.json()
