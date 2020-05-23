@@ -57,7 +57,7 @@ const Layout = (props) => (
     </main>
     <Footer />
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-          <script src="/static/onesignal.js"></script>
+          <script src="/onesignal.js"></script>
     <style jsx global>{`
       *,
       *::before,
