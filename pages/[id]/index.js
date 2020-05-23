@@ -17,11 +17,13 @@ export default class Category extends Page {
     this.state = {
       feeds: props.post.feeds,
       catId: props.catId,
-      size: 20
+      size: 20,
+      loading: false
     }
   }
 
   async  showMore() {
+    this.setState({loading: true})
     return fetch(
       `/api/feed?category=${this.state.catId}&size=${this.state.size}`
     )
@@ -29,6 +31,7 @@ export default class Category extends Page {
         return result.json()
       })
       .then(post => {
+        this.setState({loading: false})
         this.setState({ size: this.state.size + 10 })
         this.setState({ feeds: post.feeds });
         return;
@@ -90,13 +93,13 @@ export default class Category extends Page {
                 <Trending />
               </Col>
             </Row>
-            <Row className="justify-content-center col-md-8">
+            {this.state.loading == true ? <Row className="justify-content-center col-md-8"><Loader/></Row> : <Row className="justify-content-center col-md-8">
               <Button className={classnames({
                 'showmore': true,
                 'mb-2': true
               })} onClick={(e) => this.showMore(e)} color="primary" size="lg">Read More</Button>
 
-            </Row>
+            </Row>}
           </Container>
         </Layout>
       )

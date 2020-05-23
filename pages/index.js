@@ -24,9 +24,11 @@ const Home = ({ post }) => {
 //  }, [post]) 
 const [feeds, setFeeds] = useState(post.feeds);
 const [size, setSize] = useState(18);
+const [loading, setLoading] = useState(false);
 
 
  async function showMore() {
+   setLoading(true);
   return fetch(
     `api/feeds?size=${size}`
   )
@@ -39,6 +41,7 @@ const [size, setSize] = useState(18);
       setSize(size + 9)
       setFeeds(post.feeds);
       console.log(feeds);
+      setLoading(false)
       return;
     });
 }
@@ -114,13 +117,14 @@ const [size, setSize] = useState(18);
             ))}
   
           </Row>
-          <Row className="justify-content-center">
+          {loading == true? <Loader/>: <Row className="justify-content-center">
                 <Button className={classnames({
                   'showmore': true,
                   'mb-2': true
                 })} onClick={(e) => showMore(e)} color="primary" size="lg">Read More</Button>
   
-              </Row>
+              </Row>}
+          
         </Container>
   
         {user && <p>Currently logged in as: {JSON.stringify(user)}</p>}
