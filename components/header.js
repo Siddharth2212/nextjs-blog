@@ -3,9 +3,17 @@ import { useUser } from '../lib/hooks'
 import Package from '../package'
 import styles from './header.module.css'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
-const Header = () => {
+import Router from 'next/router'
+const Header = ({ onChange }) => {
+  let cityInput
   const user = useUser()
-
+  function searchFeeds(event) {
+    event.preventDefault()
+    console.log("jpaeg");
+    console.log(cityInput.value)
+    Router.push(`/search?searchquery=${cityInput.value}`)
+    // console.log(this.inputNode.value)
+ }
   return (
     <header>
       <Navbar bg="dark" expand="lg">
@@ -99,8 +107,8 @@ const Header = () => {
               </NavDropdown>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            <FormControl type="text" name="username" ref={ el => cityInput = el } placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-success" onClick={(e) => searchFeeds(e)}>Search</Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>
