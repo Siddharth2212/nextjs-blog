@@ -72,7 +72,7 @@ export default class Category extends Page {
                           <Link href="/[id]/[comment]" as={`/${catArray[this.state.catId]}/${newsfeed.newsid}`}>
                             <Card.Title style={{ cursor: "pointer", fontWeight: "bolder" }}>{newsfeed.approved_title}</Card.Title>
                           </Link>
-                          <Share newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
+                          <Share width="1.6rem" newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
 
                           <Card.Text className="mt-2">
                             {newsfeed.approved_description}

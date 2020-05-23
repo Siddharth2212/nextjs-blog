@@ -49,9 +49,9 @@ const Post = ({ post, category }) => {
                   <Card key={`post_${newsfeed.newsid}`} className="mb-4" style={{ border: "none" }}>
                     <Card.Img variant="top" src={newsfeed.approved_image} />
                     <Card.Body style={{ background: "#f0f2f5" }}>
-                    <Share newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
+                    <Share width="2rem" newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
                       <Card.Text>
-                        <div className="mb-3" dangerouslySetInnerHTML={{ __html: newsfeed.longapproved_description }}></div>
+                        <div className="mb-3 mt-2" dangerouslySetInnerHTML={{ __html: newsfeed.longapproved_description }}></div>
                         <a className="mt-2" href="{this.props.data.link}"> Read more at {
                           <a target="_blank" href={newsfeed.link}>{((typeof newsfeed.added!='undefined' && newsfeed.added == 'true') ? EXTRACTHOSTNAME(newsfeed.link) : GETHOSTNAME(newsfeed.link.split('url=')[1], newsfeed))}</a>
                         } </a>
