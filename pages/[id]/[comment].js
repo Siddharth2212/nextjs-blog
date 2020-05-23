@@ -5,7 +5,6 @@ import { Container, Row, Col, Card, Button, Breadcrumb } from 'react-bootstrap'
 import Trending from "../../components/TrendingComponent";
 import Recommended from "../../components/RecommendedComponent";
 import classnames from 'classnames';
-import { TIMESINCE} from "../../utils/timesince";
 import {  EXTRACTHOSTNAME } from "../../utils/extracthostname";
 import {  GETHOSTNAME } from "../../utils/gethostname";
 

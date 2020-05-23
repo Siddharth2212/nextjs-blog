@@ -7,7 +7,9 @@ import classnames from 'classnames';
 import React from "react";
 import Page from '../../components/page'
 import Loader from '../../components/loader';
-
+import { EXTRACTHOSTNAME } from "../../utils/extracthostname";
+import { GETHOSTNAME } from "../../utils/gethostname";
+import { TIMESINCE } from "../../utils/timesince";
 export default class Category extends Page {
 
 
@@ -75,7 +77,9 @@ export default class Category extends Page {
                             <Card.Title style={{ cursor: "pointer", fontWeight: "bolder" }}>{newsfeed.approved_title}</Card.Title>
                           </Link>
                           <Share width="1.6rem" newsid={newsfeed._id} text={newsfeed.approved_description} url={`${catArray[parseInt(newsfeed.category)]}/${newsfeed.newsid}`} />
-
+                          <div style={{fontSize: "0.8rem"}} className="pt-2">
+                      <i>{TIMESINCE(newsfeed.date)} ago | {<a style={{color: "#828282"}} target="_blank" href={newsfeed.link}>{((typeof newsfeed.added != 'undefined' && newsfeed.added == 'true') ? EXTRACTHOSTNAME(newsfeed.link) : GETHOSTNAME(newsfeed.link.split('url=')[1], newsfeed))}</a>}</i>
+                    </div>
                           <Card.Text className="mt-2">
                             {newsfeed.approved_description}
                           </Card.Text>
