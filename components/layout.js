@@ -56,7 +56,8 @@ const Layout = (props) => (
       <div className="container">{props.children}</div>
     </main>
     <Footer />
-
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+          <script src="/static/onesignal.js"></script>
     <style jsx global>{`
       *,
       *::before,
